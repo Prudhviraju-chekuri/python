@@ -5,7 +5,7 @@ class DivisionVisualizer(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Long Division - Canvas Visual (Correct Quotient)")
-        self.geometry("800x600")
+        self.geometry("1200x900")
         self.configure(bg="white")
         self.setup_ui()
 
@@ -55,7 +55,7 @@ class DivisionVisualizer(tk.Tk):
 
         # Draw dividend digits
         for i, d in enumerate(digits):
-            self.canvas.create_text(x_start + 60 + i * x_gap, step_y, text=str(d), font=("Courier", 16))
+            self.canvas.create_text(x_start + 60 + i * x_gap, step_y, text=str(d), font=("Courier", 25))
 
         # Division logic
         current = 0
@@ -74,21 +74,23 @@ class DivisionVisualizer(tk.Tk):
             quotient_digits.append(str(q_digit))
 
             x_pos = x_start + 60 + i * x_gap
-            self.canvas.create_text(x_pos, step_y - 30, text=str(q_digit), font=("Courier", 16))
+            self.canvas.create_text(x_pos, step_y - 30, text=str(q_digit), font=("Courier", 25))
 
             # Draw current and subtraction
-            self.canvas.create_text(x_pos, y, text=str(current), font=("Courier", 16))
-            self.canvas.create_text(x_pos, y + 20, text='- ' + str(product), font=("Courier", 16))
-            self.canvas.create_line(x_pos - 10, y + 30, x_pos + 10 + len(str(product)), y + 30)
+            self.canvas.create_text(x_pos, y, text=str(current), font=("Courier", 25))
+            text_str = '-' + str(product)
+            text_width = len(text_str) * 8  # Approx width per char in Courier
+            self.canvas.create_text(x_pos - text_width // 2, y + 20, text=text_str, font=("Courier", 25))
+            self.canvas.create_line(x_pos - text_width // 2, y + 30, x_pos + text_width // 2, y + 30)
 
             # Draw arrow
             if i < len(digits) - 1:
-                self.canvas.create_text(x_start + 60 + (i + 1) * x_gap, y + 45, text='↓', font=('Arial', 16))
+                self.canvas.create_text(x_start + 60 + (i + 1) * x_gap, y + 45, text='↓', font=('Arial', 10 ))
 
             y += 60  # next step
 
         # Final remainder
-        self.canvas.create_text(x_start + 60 + len(digits) * x_gap, y, text=str(remainder), font=("Courier", 16))
+        self.canvas.create_text(x_start + 60 + len(digits) * x_gap, y, text=str(remainder), font=("Courier", 25))
 
 
 # Run the app
