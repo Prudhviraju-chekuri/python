@@ -17,7 +17,7 @@ customer_name = input("Enter the customer name\n")
 is_premium_input = input("Is a premium customer: Enter [Yes/No]\n")
 is_premium = is_premium_input.lower() == "yes"
 years_partnership = int(input("Enter the no of years partnership\n"))
-dealstage = input("Enter the deal stage: [Proposal/Negotiation/Closed]\n").lower() # assuming user enters only one of these 3 values
+dealstage = input("Enter the deal stage: [Proposal/Negotiation/Closed]\n").lower()
 initial_deal_value = int(input("enter the deal value\n"))
 
 # Conditional Statements:
@@ -46,8 +46,10 @@ match dealstage:
         extra_discount = 0.05
     case "negotiation":
         extra_discount = 0.03
-    case _:
+    case "proposal":
         extra_discount = 0.02
+    case _:
+        extra_discount = 0.0
 
 extra_discount_percentage = int(extra_discount * 100)
 total_discount_percentage = base_discount_percentage + extra_discount_percentage
