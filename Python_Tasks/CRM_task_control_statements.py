@@ -15,9 +15,9 @@ and a case match statement. """
 customer_id = input("Enter the customer id\n")
 customer_name = input("Enter the customer name\n")
 is_premium_input = input("Is a premium customer: Enter [Yes/No]\n")
-is_premium = is_premium_input.lower() == "yes"
+is_premium = is_premium_input.strip().lower() == "yes"
 years_partnership = int(input("Enter the no of years partnership\n"))
-dealstage = input("Enter the deal stage: [Proposal/Negotiation/Closed]\n").lower()
+dealstage = input("Enter the deal stage: [Proposal/Negotiation/Closed]\n").strip().lower()
 initial_deal_value = int(input("enter the deal value\n"))
 
 # Conditional Statements:
