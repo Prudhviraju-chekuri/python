@@ -92,6 +92,8 @@ class DivisionVisualizer(tk.Tk):
         # Final remainder
         self.canvas.create_text(x_start + 60 + len(digits) * x_gap, y, text=str(remainder), font=("Courier", 25))
 
+print("Hello")
+
 
 # Run the app
 if __name__ == "__main__":
