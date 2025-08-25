@@ -15,6 +15,18 @@ name = "Poorvika"
 print(name)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 is_poorvi_good_girl = True
 is_pari_badgirl = False
 
@@ -28,4 +40,15 @@ msg3 = "Awsome"
 print(msg1)
 print(msg2)
 print(msg3)
-print(msg1+msg2+msg3)
+
+msg1 = "poorvi is a good girl"
+
+
+msg2 = "pari is a good girl" 
+
+
+msg3 = "my parents are good people" 
+
+
+
+print
